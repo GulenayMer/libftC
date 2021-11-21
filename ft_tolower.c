@@ -6,20 +6,20 @@
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 18:19:23 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/20 21:57:24 by mgulenay         ###   ########.fr       */
+/*   Updated: 2021/11/21 13:05:07 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int    ft_tolower(int c)
+int		ft_tolower(int c)
 {
-	if(c >= 'A' &&  c <= 'Z')
+	if (c >= 'A' &&  c <= 'Z')
 	{
-      return (c + 32);
+		return (c + 32);
 	}
 	else
 	{
-	 return(c);
-	}	
+		return (c);
+	}
 }

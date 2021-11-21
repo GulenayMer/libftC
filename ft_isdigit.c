@@ -6,13 +6,13 @@
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 18:15:32 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/20 18:16:34 by mgulenay         ###   ########.fr       */
+/*   Updated: 2021/11/21 12:59:22 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int    ft_isdigit(int c)
+int		ft_isdigit(int c)
 {
-  return ((c>= '0' && c<= '9')); 
+	return ((c >= '0' && c <= '9'));
 }

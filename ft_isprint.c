@@ -6,13 +6,13 @@
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 18:18:01 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/20 18:18:24 by mgulenay         ###   ########.fr       */
+/*   Updated: 2021/11/21 13:00:49 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int		ft_isprint(int c)
 {
-	return(c >= 32 && c <= 126);
+	return (c >= 32 && c <= 126);
 }

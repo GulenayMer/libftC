@@ -6,26 +6,21 @@
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 18:20:47 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/20 22:45:53 by mgulenay         ###   ########.fr       */
+/*   Updated: 2021/11/21 15:36:55 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h" 
 
-*char    ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-  
-   int i;
-
-   i = 0;
-	  while(*s!='\0')
+	while (*s != '\0')
 	{
-    *s++;
-      if(*s == c)
-		{    
-      return((char *)s + );
-                   
+		if (*s == c)
+		{
+			return ((char *)s);
 		}
-	}
+			s++;
+	}	
+	return (NULL);
 }
-

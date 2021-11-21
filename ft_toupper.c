@@ -6,21 +6,20 @@
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 18:18:43 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/20 21:29:01 by mgulenay         ###   ########.fr       */
+/*   Updated: 2021/11/21 13:04:50 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int    ft_toupper(int c)
+int		ft_toupper(int c)
 {
-	if(c >= 'a' && c <= 'z')
+	if (c >= 'a' && c <= 'z')
 	{
-		return(c - 32);
-	  
+		return (c - 32);
 	}
 	else
 	{
-	    return(c);	
+		return (c);
 	}
 }

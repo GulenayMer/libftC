@@ -110,7 +110,6 @@ int c;
     printf("%d\n", ft_isprint(e));
 } */
  
-
  //          toupper  //
  /* int    ft_toupper(int c);
 
@@ -135,8 +134,6 @@ printf("%c\n", ft_toupper(c));
     return 0;
 } */
 
-
-
 //          tolower  //
 /* int    ft_tolower(int c);
 
@@ -147,7 +144,7 @@ c = 'A';
 printf("%c\n", ft_tolower(c));
 } */ 
 
-/* int main(void)
+ /* int main(void)
 {
     char *str = "HELLO WOLRD\n";
     char ch;
@@ -158,8 +155,7 @@ printf("%c\n", ft_tolower(c));
         *str++;
     }
     return 0;
-} */
-
+} */ 
 
 
 //         ft_strlen //
@@ -174,55 +170,127 @@ int main(void)
 }  */
 
 //         ft_strchr //
-*char    ft_strchr(const char *s, int c);
+/*  char *ft_strchr(const char *s, int c);
+
+   int main (void) 
+   {
+   const char str[] = "http://www.helloworld.com";
+   const char ch = 'w';
+   // const char ch = '?';
+   char *ret;
+
+   ret = ft_strchr(str, ch);
+
+   printf("String after %c is - %s\n", ch, ret);
+   
+   return(0);
+}  */
+
+//         ft_strrchr //
+/* char   *ft_strrchr(const char *s, int c);
+
+ int main(void)
+{
+   const char str[] = "http://www.helloworld.com";
+   const char ch = '.';
+   // const char ch = '?';
+   char *ret;
+
+   ret = ft_strrchr(str, ch);
+
+   printf("String after %c is - %s\n", ch, ret);
+   
+   return(0);
+}
+
+ */
+
+//      ft_memchr//
+void	*ft_memchr(const void *s, int c, size_t n);
 
 int main(void)
 {
-	
+   const char str[] = "http://www.helloworld.com";
+   const char ch = 'o';
+   // const char ch = '?';
+   char *ret;
+   ret = ft_memchr(str, ch, sizeof(str));
+
+   printf("String after %c is - %s\n", ch, ret);
+   
 } 
 
-
-//         ft_strchr //
-/* int main(void)
-{
-	
-}
- */
-//        ft_strrchr //
-/* int main(void)
-{
-	
-} */
-
 //        ft_ strncmp //
-/* int main (void)
-{
-    char str1[20];
-   char str2[20];
+/* #include <string.h>
+int ft_strncmp(const char *s1, const char *s2, size_t n);
 
-   strcpy(str2, "hello");
-   strcpy(str1, "WORLD");
+int main (void)
+{
+	char str1[20];
+	char str2[20];
+
+   strcpy(str1, "hellD");
+   strcpy(str2, "WORLd");
+
    int result = ft_strncmp(str1, str2, 5);
    printf("%d", result);
+
+   return(0);
+} 
+ */
+
+//       ft_memcmp  //
+/* #include <string.h>
+int ft_memcmp(const void *s1, const void *s2, size_t n);
+
+int main (void)
+{
+	char str1[20];
+	char str2[20];
+
+   strcpy(str1, "hellD");
+   strcpy(str2, "WORLd");
+
+   int result = ft_memcmp(str1, str2, 5);
+   printf("%d", result);
+
+   return(0);
+}  */
+
+
+//       ft_memset //
+/* void    *ft_memset(void *s, int c, size_t n);
+
+ int main()
+{
+    char str[50] = "hello world, I am just a friend.";
+    printf("\nBefore ft_memset(): %s\n", str);
+  
+    // Fill 8 characters starting from str[13] with '.'
+    ft_memset(str + 13, '.', 6);
+  
+    printf("After ft_memset():  %s\n", str);
     return 0;
 } */
 
-//       ft_memset //
-/* int main()
-{
-  char *str;
-  str = "Hello World";
-
-  printf("%s", memset(str, "/", 7));
-  return(0);
-} */
 
 //      ft_bzero //
-/* int main(void)
+/* void ft_bzero(void *s, size_t n);
+ int main(void)
 {
 
-}
- */
+    char str[50] = "hello world, I am just a friend.";
+    printf("\nBefore ft_memset(): %s\n", str);
+  
+    // Fill 8 characters starting from str[13] with '.'
+    ft_bzero(str + 13, 6);
+  
+    printf("After ft_memset():  %s\n", str);
+    return 0;
+} */
+ 
+
+
 //      ft_memcpy //
 /* int main()
 {
@@ -243,9 +311,3 @@ return 0;
 
 
 
-//      ft_memchr//
-/* int main(void)
-{
-
-	
-}  */
