@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/20 18:21:23 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/23 17:54:04 by mgulenay         ###   ########.fr       */
+/*   Created: 2021/11/22 13:59:46 by mgulenay          #+#    #+#             */
+/*   Updated: 2021/11/23 21:21:57 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char   *ft_strrchr(const char *s, int c)
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char *p;
+	size_t	i;
+	size_t	leng_src;
+	size_t	leng_dst;
+     
 	
-	p = NULL;
-	while (*s != '\0')
+	
+	if (size < len_dst)
 	{
-		if (*s == c)
-		{
-			p = ((char *)s);
-			
-		}
-		    
-			s++;
-	}	
-	return (NULL);
+		return (leng_src + size);
+	}
+	
 }
-

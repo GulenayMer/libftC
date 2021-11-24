@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/20 18:21:23 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/23 17:54:04 by mgulenay         ###   ########.fr       */
+/*   Created: 2021/11/22 14:00:41 by mgulenay          #+#    #+#             */
+/*   Updated: 2021/11/23 23:39:20 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char   *ft_strrchr(const char *s, int c)
+int		ft_atoi(const char *nptr)
 {
-	char *p;
+	int 	result;
+	int		i;
+	int 	sign;
 	
-	p = NULL;
-	while (*s != '\0')
+	sign = 1;
+	i = 0;
+	if (nptr[0] == '-')
 	{
-		if (*s == c)
-		{
-			p = ((char *)s);
-			
-		}
-		    
-			s++;
-	}	
-	return (NULL);
-}
+		sign = -1;
+		i++;
+	}
 
+	result = 0;
+	while (nptr[i] != '\0')
+	{
+		result = result * 10 + nptr[i] - '0';
+		i++;
+	}
+	return (sign * result);
+}
