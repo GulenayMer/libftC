@@ -6,7 +6,7 @@
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 18:22:33 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/21 17:38:57 by mgulenay         ###   ########.fr       */
+/*   Updated: 2021/11/27 23:57:40 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*p;
+	char	*p;
+	size_t	i;
 
 	p = s;
-	while (*p != '\0' && n > 0)
+	i = 0;
+	while (i < n)
 	{
-		*p = '\0';
-		p++;
-		n--;
+		*(p + i) = '\0';
+		i++;
 	}
-	return;
+	return ;
 }

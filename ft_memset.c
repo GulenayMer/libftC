@@ -6,7 +6,7 @@
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 18:22:01 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/21 16:45:12 by mgulenay         ###   ########.fr       */
+/*   Updated: 2021/11/27 00:41:25 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*p;
+	char	*p;
+	size_t	i;
 
 	p = s;
-	while (*p != '\0' && n > 0)
+	i = 0;
+	while (i < n)
 	{
-		*p = c;
-		p++;
-		n--;
+		*(p + i) = c;
+		i++;
 	}
 	return (p);
 }

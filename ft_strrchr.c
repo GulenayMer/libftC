@@ -6,27 +6,28 @@
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 18:21:23 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/23 17:54:04 by mgulenay         ###   ########.fr       */
+/*   Updated: 2021/11/26 22:59:18 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char   *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char *p;
-	
-	p = NULL;
-	while (*s != '\0')
+	int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (*s == c)
+		i++;
+	}
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
 		{
-			p = ((char *)s);
-			
+			return ((char *)(s + i));
 		}
-		    
-			s++;
+	i--;
 	}	
 	return (NULL);
 }
-

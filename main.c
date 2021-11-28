@@ -163,9 +163,9 @@ printf("%c\n", ft_tolower(c));
 
 int main(void)
 {
-   const char *str = "HELLO WOLRD";
+   const char *str = " HELLO WOLRD, how are you?";
 
-    printf("%zu",ft_strlen(str));
+    printf("%zu\n",ft_strlen(str));
     return 0;
 }  */
 
@@ -258,20 +258,20 @@ int main (void)
 
 
 //       ft_memset //
-/* void    *ft_memset(void *s, int c, size_t n);
+/*  void    *ft_memset(void *s, int c, size_t n);
 
  int main()
 {
     char str[50] = "hello world, I am just a friend.";
     printf("\nBefore ft_memset(): %s\n", str);
-  
-    // Fill 8 characters starting from str[13] with '.'
-    ft_memset(str + 13, '.', 6);
+  int c = '1';
+    // Fill 6 characters starting from str[13] with '.'
+    ft_memset(str + 13, a, 6);
   
     printf("After ft_memset():  %s\n", str);
     return 0;
-} */
-
+} 
+ */
 
 //      ft_bzero //
 /* void ft_bzero(void *s, size_t n);
@@ -324,42 +324,37 @@ return 0;
 
 
 //   ft_strlcpy  //
-/* #include <string.h>
+/*  #include <string.h>
+ #include <stdio.h>
 size_t	ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize);
 int main (void)
  {
-   char src[34], dest[2];
+   char src[20] = "Hello";
+   char dest[10];
+   //char dest2[10];
 
-   strcpy(src,  "mervemerve"); 
-   strcpy(dest, ""); 
-
-   ft_strlcpy(dest, src, 4);
-
-   printf("Final destination string : %s/n", dest);
-   
+   printf("Final destination string : %zu %s/n", ft_strlcpy(dest, src, 4), dest);
+   //printf("Final destination string :%u %s/n",  strncpy(dest2, src, 4), dest2);
    return(0);
 }
- */
+  */
 
 
 //   ft_strlcat //
-/* #include <string.h>
+/*  #include <string.h>
 
-size_t ft_strlcat(char *dst, const char *src, size_t size);
+size_t		ft_strlcat(char *dst, const char *src, size_t size);
 
-int main () {
-   char src[50], dest[50];
+int main (void) 
+{
+  	char src[10] = "Hello";
+	char dest[10] = "World";
+    char dest2[10] = "World";
 
-   strcpy(src,  "This is source");
-   strcpy(dest, "This is destination");
-
-   ft_strlcat(dest, src, 15);
-
-   printf("Final destination string : %s", dest);
-   
-   return(0);
-}
- */
+   	printf("Final destination string : %zu %s\n", ft_strlcat(dest, src, 5), dest);
+   printf("Final destination string :%u %s\n",  strlcat(dest2, src, 5), dest2);
+   	return(0);
+} */
 
 
 //   ft_strnstr  //
@@ -431,3 +426,115 @@ int main(void)
 	}
 	return(0);
 } */
+
+
+// -------------------------2.Part --------------------//
+//   ft_substr  //
+
+/* char *ft_substr(char const *s, unsigned int start, size_t len);
+
+int main(void)
+{
+   	char s[255] = "Hello, how are you?";
+   	char subs[255];
+   	int start = 2;
+    int length = 5;
+
+	char *result = ft_substr(s, start, length);
+
+	printf("Substring is %s\n", result);
+ 
+	return 0;
+} */
+
+
+//  -- ft_strjoin  ----- //
+/* char	*ft_strjoin(char const *s1, char const *s2);
+int main()
+{
+	char s1[20] = "Look Here!";
+	//char s1[20] = "";
+	char s2[20] = " Unimaginable";
+	//char s1[20] = "";
+	char new[20];
+	
+	char *result = ft_strjoin(s1, s2);
+	printf("%s\n", result);
+
+	return 0;
+} */
+
+//  -- ft_strtrim.c -- //
+/* char	*ft_strtrim(char const *s1, char const *set);
+int main(void)
+{
+	char A[20] = "?Hello?";
+	char set[20] = ".?";
+    char *result;
+	result = ft_strtrim(A, set);
+	printf("%s", result);
+} */
+
+//   -- ft_strmapi.c  //
+/* char my_function(unsigned int i, char c)
+{
+
+printf("index = %d and %c\n", i, c);
+return c;
+}
+
+int main()
+ {
+	char str[10] = "hello!";
+ 	printf("%s\n", str);
+ 	char *result = ft_strmapi(str, my_function);
+ 	printf("The result is %s\n", result);
+return 0;
+ } */
+
+
+// -- ft_striteri.c  //
+/* void my_function(unsigned int i, char *s)
+{
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+printf("index = %d and %s\n", i, s);
+}
+
+int main()
+ {
+	char str[10] = "hello!";
+ 	printf("%s\n", str);
+ 	ft_striteri(str, my_function);
+ 	printf("The result is %s\n", str);
+return 0;
+ } */
+
+// --- ft_putchar_fd -- 
+/* int main (void)
+{
+	char a = 'H';
+	ft_putchar_fd(a, 1);
+	return(0);
+} */
+
+ // ---ft_putstr_fd
+/*  int main (void)
+{
+	char s[20] = "Hello!";
+	ft_putstr_fd(s, 1);
+	return(0);
+} */
+
+//   ft_putendl_fd.c  //
+int main (void)
+{
+	char s[20] = "Hello!";
+	ft_putendl_fd(s, 1);
+	return(0);
+}
+
+//
