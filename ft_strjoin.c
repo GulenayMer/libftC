@@ -6,7 +6,7 @@
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:52:21 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/27 17:19:16 by mgulenay         ###   ########.fr       */
+/*   Updated: 2021/11/29 22:14:49 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	while (j < s2_length)
 	{
-		new_str[i] = s2[j];
-		i++;
+		new_str[i + j] = s2[j];
 		j++;
 	}
 	new_str[i + j] = '\0';

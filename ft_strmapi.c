@@ -6,7 +6,7 @@
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 22:58:11 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/28 18:31:59 by mgulenay         ###   ########.fr       */
+/*   Updated: 2021/11/29 21:54:59 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*new_str;
+	char			*new_str;
 	unsigned int	i;
 
 	new_str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);

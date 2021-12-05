@@ -6,7 +6,7 @@
 #    By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 00:12:30 by mgulenay          #+#    #+#              #
-#    Updated: 2021/11/28 00:37:21 by mgulenay         ###   ########.fr        #
+#    Updated: 2021/12/05 16:12:54 by mgulenay         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,9 +41,27 @@ SRCS 	=	ft_isalpha.c \
 			ft_strtrim.c \
 			ft_itoa.c \
 			ft_strjoin.c \
-			ft_strmapi.c
-
+			ft_split.c \
+			ft_strmapi.c \
+			ft_striteri.c \
+			ft_putstr_fd.c \
+			ft_putchar_fd.c \
+			ft_putendl_fd.c \
+			ft_putnbr_fd.c \
+			
+BNS		= 	ft_lstadd_back.c \
+			ft_lstadd_front.c \
+			ft_lstclear.c \
+			ft_lstdelone.c \
+			ft_lstiter.c \
+			ft_lstmap.c \
+			ft_lstsize.c \
+			ft_lstlast.c
+			
 OBJS		=	$(SRCS:.c=.o)
+
+BNS_OBJS	=	$(BNS:.c=.o)
+
 RM          = rm -f
 
 all : $(NAME)
@@ -52,13 +70,14 @@ all : $(NAME)
 $(NAME) :	$(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %c $(HEADER)
-	$(CC) $(CFLAGS) -o $@ -c $<
+
+bonus: $(OBJS) $(BNS_OBJS)
+	ar rc $(NAME) $(OBJS) $(BNS_OBJS)
 
 clean:
 		$(RM) $(OBJS)
 
 fclean:		clean
 				$(RM) $(NAME)
-
+	
 re: 		fclean $(NAME)

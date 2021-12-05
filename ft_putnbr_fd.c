@@ -6,7 +6,7 @@
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 20:00:20 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/28 20:39:16 by mgulenay         ###   ########.fr       */
+/*   Updated: 2021/12/05 12:37:17 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == -2147483648)
-	{
-		ft_putstr_fd("-2147483648", fd);
-	}
-	else if (n < 0)
+	int	sign;
+	
+	sign = -1;
+	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd);
+		n = (long)(n * sign);
 	}
-	else if (n >= 10)
+	else
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd((n % 10 + '0'), fd);
+		n = (long)n;
 	}
 	
-}
-
-int main (void)
-{
-	int c = 334;
-	ft_putnbr_fd(c, 1);
-	return(0);
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd((char)(n % 10 + '0'), fd);
+	}
+	else
+	{
+		ft_putchar_fd((char)(n + '0'), fd);
+	}	
 }

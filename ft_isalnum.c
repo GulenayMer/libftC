@@ -6,7 +6,7 @@
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 18:16:02 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/26 19:00:27 by mgulenay         ###   ########.fr       */
+/*   Updated: 2021/11/29 12:46:06 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int	ft_isalnum(int c)
 {
-	return ((c >= '0' && c <= '9') && ((c >= 'a' && c <= 'z')
-			|| (c >= 'A' && c <= 'Z')));
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

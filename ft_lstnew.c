@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_Istnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgulenay <mgulenay@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 14:00:07 by mgulenay          #+#    #+#             */
-/*   Updated: 2021/11/29 12:36:57 by mgulenay         ###   ########.fr       */
+/*   Created: 2021/12/05 13:52:59 by mgulenay          #+#    #+#             */
+/*   Updated: 2021/12/05 14:27:59 by mgulenay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*new_element;
 
-	i = 0;
-	if (size > 0)
-	{
-		while (src[i] != '\0' && i < (size - 1))
-		{
-		dst[i] = src[i];
-		i++;
-		}
-	dst[i] = '\0';
-	}
-	while (src[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	new_element = (t_list *)malloc(sizeof(t_list));
+	if (!new_element)
+		return (NULL);
+	new_element->content = content;
+	new_element->next = NULL;
+	return (new_element);
 }

@@ -61,8 +61,8 @@
     printf("%d\n", ft_isalnum(f));
     
  return(0);
-}
- */
+} */
+ 
 
 
 //          isascii  //
@@ -159,7 +159,7 @@ printf("%c\n", ft_tolower(c));
 
 
 //         ft_strlen //
-/* size_t    ft_strlen(const char *s);
+/*  size_t    ft_strlen(const char *s);
 
 int main(void)
 {
@@ -167,7 +167,7 @@ int main(void)
 
     printf("%zu\n",ft_strlen(str));
     return 0;
-}  */
+}   */
 
 //         ft_strchr //
 /*  char *ft_strchr(const char *s, int c);
@@ -176,6 +176,7 @@ int main(void)
    {
    const char str[] = "http://www.helloworld.com";
    const char ch = 'w';
+   //const char ch = '\0';
    // const char ch = '?';
    char *ret;
 
@@ -184,7 +185,7 @@ int main(void)
    printf("String after %c is - %s\n", ch, ret);
    
    return(0);
-}  */
+}  */ 
 
 //         ft_strrchr //
 /* char   *ft_strrchr(const char *s, int c); */
@@ -220,7 +221,7 @@ int main(void)
 }  */
 
 //        ft_ strncmp //
-/* #include <string.h>
+/*  #include <string.h>
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 
 int main (void)
@@ -228,18 +229,25 @@ int main (void)
 	char str1[20];
 	char str2[20];
 
-   strcpy(str1, "hellD");
-   strcpy(str2, "WORLd");
+   strcpy(str1, "Hello");
+   strcpy(str2, "hello");
 
    int result = ft_strncmp(str1, str2, 5);
-   printf("%d", result);
-
+    if (result < 0) 
+	{
+     	printf("-1\n");
+    } 
+	else if (result > 0) {
+		printf("1\n");
+	} else {
+		printf("0\n");
+	}
    return(0);
-} 
- */
+}  */
+
 
 //       ft_memcmp  //
- /* #include <string.h>
+/* #include <string.h>
 int ft_memcmp(const void *s1, const void *s2, size_t n);
 
 int main (void)
@@ -251,10 +259,20 @@ int main (void)
    strcpy(str2, "WORLd");
 
    int result = ft_memcmp(str1, str2, 5);
-   printf("%d", result);
+   	if(result > 0) 
+   	{
+		printf("1\n");
+    } 
+	else if(result < 0) {
+       printf("-1\n");
+   } 
+   	else 
+	{
+    	  printf("0\n");
+    }
 
    return(0);
-}   */
+}  */
 
 
 //       ft_memset //
@@ -288,40 +306,43 @@ int main (void)
     return 0;
 } */
  
-
-
 //      ft_memcpy //
 /*  #include <string.h>
 void	*ft_memcpy(void *dest, const void *src, size_t n);
  int main()
 {
-   char csrc[20] = "lalalaohla";
-   char cdest[100];
-   char csrc2[20] = "lalalaohla";
-   char cdest2[100];
+   char src1[20] = "lalalaohla";
+   char dest1[100] = "no";
+   char src2[20] = "lalalaohla";
+   char dest2[100] = "no";
 
-   ft_memcpy(cdest, csrc, strlen(csrc)+1);
-    memcpy(cdest2, csrc2, strlen(csrc)+1);
-   printf("Copied string is %s\n", cdest);
-   printf("Copied string is %s\n", cdest2);
+	ft_memcpy(dest1, src1, sizeof(src1));
+	printf("Copied string is %s\n", dest1);
+    memcpy(dest2, src2, sizeof(src2));
+   printf("Copied string is %s\n", dest2);
 return 0;
 }   */
 
 
 //      ft_memmove //
 
-/*  #include <string.h>
+ /* #include <string.h>
 void	*ft_memmove(void *dest, const void *src, size_t n);
   int main(void)
 {
-   char csrc[20] = "lalalaohla";
-   char cdest[100];
-   ft_memmove(cdest, csrc, strlen(csrc)+1);
-   // memcpy(cdest, csrc, strlen(csrc)+1);
-   printf("Copied string is %s", cdest);
-return 0;
-} */
+   char src1[20] = "lalalaohla";
+   char dest1[100] = "No";
+	char src2[20] = "lalalaohla";
+   char dest2[100] = "No";
 
+   ft_memmove(dest1, src1, 5);
+   printf("Copied string is %s\n", dest1);
+
+   memcpy(dest2, src2, 5);
+   printf("Copied string is %s\n", dest2);
+return 0;
+} 
+ */
 
 //   ft_strlcpy  //
 /*  #include <string.h>
@@ -358,20 +379,20 @@ int main (void)
 
 
 //   ft_strnstr  //
-
-/* #include <string.h>
-char *ft_strnstr(const char *big, const char *little, size_t len);
+/* char *ft_strnstr(const char *big, const char *little, size_t len);
 
 int main (void) {
-   char big[50], little[50];
 
-   strcpy(big,  "bar bar bear");
-   strcpy(little, "bar");
-   char *result;
-   // strcpy(dest, "no"); 
-	result = ft_strnstr(big, little, 3);
+    // const char big[20] = "bar bar bear";
+    //const char little[10] = "bar";
+	//const char little[10] = "aaaa";
+	//const char little[10] = "";
+	const char big[30] = "lorem ipsum dolor sit amet";
+	const char little[10] = "loremm";
+    char *result;
 
-   printf("Final destination string : %s", result);
+	result = ft_strnstr(big, little, 15);
+	printf("The substring is: %s\n", result);
    
    return(0);
 } */
@@ -430,49 +451,67 @@ int main(void)
 
 // -------------------------2.Part --------------------//
 //   ft_substr  //
-
-/* char *ft_substr(char const *s, unsigned int start, size_t len);
+/* 
+ char *ft_substr(char const *s, unsigned int start, size_t len);
 
 int main(void)
 {
-   	char s[255] = "Hello, how are you?";
-   	char subs[255];
-   	int start = 2;
-    int length = 5;
+   	// char s[255] = "Hello, how are you?";
+	//char s[30] = "lorem ipsum dolor sit amet";
+   	char s[255] = "";
+   	//int start = 2;
+    //int length = 5;
 
-	char *result = ft_substr(s, start, length);
-
+	char *result = ft_substr(s, 6, 10);
 	printf("Substring is %s\n", result);
- 
 	return 0;
-} */
+}  */
 
 
 //  -- ft_strjoin  ----- //
-/* char	*ft_strjoin(char const *s1, char const *s2);
+/*  char	*ft_strjoin(char const *s1, char const *s2);
 int main()
 {
-	char s1[20] = "Look Here!";
+	//char s1[20] = "Look Here!";
+	 char s1[20] = "lorem ipsum";
+
+	// char s1[20] = "";
+	// char s2[20] = " Unimaginable";
+	char s2[20] = "dolor sit amet";
 	//char s1[20] = "";
-	char s2[20] = " Unimaginable";
-	//char s1[20] = "";
-	char new[20];
 	
 	char *result = ft_strjoin(s1, s2);
 	printf("%s\n", result);
 
 	return 0;
-} */
+}  */
 
 //  -- ft_strtrim.c -- //
-/* char	*ft_strtrim(char const *s1, char const *set);
+/*   char	*ft_strtrim(char const *s1, char const *set);
 int main(void)
 {
-	char A[20] = "?Hello?";
-	char set[20] = ".?";
+	//char s1[20] = "??Hello?";
+	//char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
+	char s1[] = "lorem ipsum dolor sit amet";
+	char set[20] = " ";
     char *result;
-	result = ft_strtrim(A, set);
+	result = ft_strtrim(s1, set);
 	printf("%s", result);
+}  */
+
+
+// -- ft_itoa -- //
+/* 
+int main(void)
+{
+	int a = -9876;
+	int b = 9876;
+	char *result1 = ft_itoa(a);
+	printf("%s\n", result1);
+
+	char *result2 = ft_itoa(b);
+	printf("%s\n", result2);
+	return(0);
 } */
 
 //   -- ft_strmapi.c  //
@@ -530,11 +569,94 @@ return 0;
 } */
 
 //   ft_putendl_fd.c  //
-int main (void)
+/* int main (void)
 {
 	char s[20] = "Hello!";
 	ft_putendl_fd(s, 1);
 	return(0);
 }
-
+ */
 //
+
+
+// 
+
+/* void	ft_putnbr_fd(int n, int fd);
+int main (void)
+{
+	int c = -2147483647;
+	ft_putnbr_fd(c, 1);
+	return(0);
+} */
+
+// itoa
+/* char	*ft_itoa(int n);
+ int main (void)
+{
+	//int n = -2147483647;
+	//int n = -2147483647;
+	//int n = -2147483647;
+	int n = -543000;
+	char *result;
+	result = ft_itoa(n);
+	printf("return value %s\n", result);
+	return (0);
+}  */
+
+// 
+/*  char	**ft_split(char const *s, char c);
+int main(void)
+{
+	char **s;
+	int i = 0;
+	char c = ' ';
+	//s = ft_split("Test Tested Testing", c);
+	s = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", c);
+
+	while (i < 12)
+	{
+	printf("%s\n", s[i]);
+	i++;
+	}
+	return (0);
+} */
+
+
+///  ls_new  
+/* t_list	*ft_lstnew(void *content);
+
+int main(void)
+{
+	char content[20] = "CONTENT.";
+	t_list *result = ft_lstnew((void *)content);
+	printf("The content is %s", (char *)result->content);
+	return 0;
+} */
+
+
+//  lst_front
+
+/* int main()
+{
+	t_list *my_tlist = (t_list *)malloc(sizeof(t_list) * 5);
+	char content[20] = "CONTENT.";
+ 	t_list *linked_list_item1 = ft_lstnew((void *)content);
+	char content2[20] = "CONTENT2.";
+	t_list *linked_list_item2 = ft_lstnew((void *)content2);
+	ft_lstadd_front(&my_tlist, linked_list_item1);
+ 	ft_lstadd_front(&my_tlist, linked_list_item2);
+ 	printf("The result is %s\n", (char *)my_tlist[0].content);
+ 	printf("The result is %s\n", (char *)my_tlist[0].next->content);
+ 	return 0;
+ } */
+
+
+// lst_size
+ int main(void)
+{
+	char content[20] = "CONTENT.";
+	t_list *result = ft_lstsize((void *)content);
+	ft_lstsize(&result);
+	printf("The size is %p", result->content);
+return 0;
+}
